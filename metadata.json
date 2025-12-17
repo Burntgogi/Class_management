@@ -1,0 +1,5 @@
+{
+  "name": "Classroom Cleanup Assigner",
+  "description": "A random cleaning zone assignment tool for classrooms with countdown and masking features.",
+  "requestFramePermissions": []
+}
