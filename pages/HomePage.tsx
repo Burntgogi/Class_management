@@ -13,7 +13,7 @@ export const HomePage: React.FC = () => {
                         {/* Developer Profile */}
                         <div className="flex-1">
                             <h1 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-4">
-                                🏫 학급 경영 프로그램 모음
+                                🏫 AI 개발과 학급경영: 박준민의 스마트 랩
                             </h1>
 
                             <div className="bg-blue-50 p-6 rounded-2xl border border-blue-100 shadow-sm">
@@ -63,7 +63,7 @@ export const HomePage: React.FC = () => {
                 {/* Section 1: Class Management */}
                 <section>
                     <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2 border-l-4 border-blue-600 pl-4">
-                        ✨ 학급 경영 프로그램 모음
+                        ✨ 학급 경영 자동화 시스템
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -146,6 +146,31 @@ export const HomePage: React.FC = () => {
                                     (개인 프로젝트)
                                 </p>
                                 <div className="mt-4 flex items-center text-purple-600 font-bold text-sm">
+                                    바로가기 &rarr;
+                                </div>
+                            </div>
+                        </a>
+
+                        {/* Yeongcha Yeongdan App */}
+                        <a
+                            href="https://edpp-m.netlify.app/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group bg-white rounded-2xl shadow hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col h-full transform hover:-translate-y-1"
+                        >
+                            <div className="h-40 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center relative overflow-hidden">
+                                <div className="absolute inset-0 bg-white opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                                <span className="text-6xl">🔥</span>
+                            </div>
+                            <div className="p-6 flex-1 flex flex-col">
+                                <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-indigo-600 transition-colors">
+                                    영차잉차 영단뿌!
+                                </h3>
+                                <p className="text-gray-500 text-sm flex-1">
+                                    중학생을 위한 단계별 영단어 학습 도우미. 학년별 필수 어휘와 암기 시스템을 경험하세요.<br />
+                                    (개인 프로젝트)
+                                </p>
+                                <div className="mt-4 flex items-center text-indigo-600 font-bold text-sm">
                                     바로가기 &rarr;
                                 </div>
                             </div>
