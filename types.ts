@@ -27,14 +27,14 @@ export interface Settings {
 export interface DashboardCardItem {
   title: string;
   description: string;
-  highlight: string;
   href: string;
-  kicker: string;
   ctaLabel: string;
   accent: 'blue' | 'green' | 'amber' | 'slate';
   icon: LucideIcon;
   badge?: string;
   external?: boolean;
+  highlight?: string;
+  kicker?: string;
 }
 
 export type AppState = 'input' | 'counting' | 'waiting_reveal' | 'result';
