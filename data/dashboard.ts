@@ -14,11 +14,12 @@ export const classManagementTools: DashboardCardItem[] = [
   {
     title: '생활기록부 금칙어 찾기',
     description: '생활기록부 기록 속 금칙어를 찾아줍니다.',
-    href: '/wordsearch',
+    href: 'https://rbfwordsearch.netlify.app/',
     ctaLabel: '도구 열기',
     accent: 'green',
     icon: WandSparkles,
     badge: '신규',
+    external: true,
   },
 ];
 
