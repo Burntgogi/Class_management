@@ -7,26 +7,33 @@ interface Props {
   item: DashboardCardItem;
 }
 
-const iconAccentClasses: Record<DashboardCardItem['accent'], string> = {
-  blue: 'bg-sky-100 text-sky-700',
-  green: 'bg-emerald-100 text-emerald-700',
-  amber: 'bg-amber-100 text-amber-700',
-  slate: 'bg-slate-100 text-slate-700',
+const accentClasses: Record<DashboardCardItem['accent'], string> = {
+  blue: 'bg-[#edf5fb] text-[#2d6f91] ring-[#d7e7f3]',
+  green: 'bg-[#edf7f2] text-[#2f7d81] ring-[#dceee7]',
+  amber: 'bg-[#fdf2e8] text-[#d07a28] ring-[#f2dfcb]',
+  slate: 'bg-[#eef1f4] text-[#596579] ring-[#dce2e8]',
+};
+
+const badgeClasses: Record<DashboardCardItem['accent'], string> = {
+  blue: 'bg-[#f9efe8] text-[#f97a4b]',
+  green: 'bg-[#eef6f5] text-[#2f7d81]',
+  amber: 'bg-[#fff3e4] text-[#d07a28]',
+  slate: 'bg-[#f2f4f7] text-[#596579]',
 };
 
 function CardBody({ item }: Props) {
   const Icon = item.icon;
 
   return (
-    <div className="flex h-full flex-col rounded-[28px] border border-white/70 bg-white/92 p-6 shadow-[0_24px_60px_-36px_rgba(15,23,42,0.3)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_68px_-36px_rgba(15,23,42,0.36)]">
-      <div className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl ${iconAccentClasses[item.accent]}`}>
+    <div className="flex h-full flex-col rounded-[30px] border border-[#ece7dd] bg-white p-6 shadow-[0_20px_40px_-30px_rgba(15,23,42,0.35)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_48px_-30px_rgba(15,23,42,0.4)]">
+      <div className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl ring-1 ${accentClasses[item.accent]}`}>
         <Icon size={24} />
       </div>
 
       <div className="mt-6 flex items-center gap-2">
         <h3 className="text-2xl font-semibold text-slate-900">{item.title}</h3>
         {item.badge && (
-          <span className="rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-500">
+          <span className={`rounded-full px-2.5 py-1 text-[11px] font-semibold ${badgeClasses[item.accent]}`}>
             {item.badge}
           </span>
         )}
