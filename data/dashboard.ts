@@ -42,7 +42,7 @@ export const personalProjects: DashboardCardItem[] = [
     external: true,
   },
   {
-    title: '영차영단',
+    title: '잉차영차 영단뿌',
     description: '단계별 어휘 학습 흐름을 중심으로 만든 중학생 대상 영어 학습 보조 도구입니다.',
     href: 'https://edpp-m.netlify.app/',
     ctaLabel: '사이트 열기',

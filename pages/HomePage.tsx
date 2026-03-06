@@ -59,48 +59,44 @@ export const HomePage: React.FC = () => {
               <div className="absolute right-0 top-28 h-44 w-36 bg-[#e96d44] opacity-90 [clip-path:ellipse(56%_46%_at_72%_52%)]" />
               <div className="absolute bottom-0 left-0 right-0 h-28 bg-[linear-gradient(180deg,rgba(34,74,84,0)_0%,rgba(21,49,58,0.92)_100%)]" />
 
-              <div className="absolute right-6 top-6 hidden w-40 gap-3 md:flex md:flex-col">
-                <div className="rounded-[22px] bg-white/82 p-4 shadow-[0_20px_40px_-26px_rgba(15,23,42,0.45)] backdrop-blur">
-                  <div className="flex items-center gap-2">
-                    <span className="h-3 w-3 rounded-full bg-[#f97a4b]" />
-                    <span className="h-3 w-3 rounded-full bg-[#2f6a78]" />
-                    <span className="h-3 w-3 rounded-full bg-[#f3c8aa]" />
-                  </div>
-                  <div className="mt-4 space-y-2">
-                    <div className="h-2 rounded-full bg-[#f6e5d6]" />
-                    <div className="h-2 w-4/5 rounded-full bg-[#e6f1f0]" />
-                    <div className="h-2 w-3/5 rounded-full bg-[#f9c9b1]" />
-                  </div>
+              <div className="absolute right-8 top-8 hidden w-[168px] rounded-[26px] bg-white/78 p-4 shadow-[0_20px_40px_-26px_rgba(15,23,42,0.45)] backdrop-blur md:block">
+                <div className="flex items-center gap-2">
+                  <span className="h-3 w-3 rounded-full bg-[#f97a4b]" />
+                  <span className="h-3 w-3 rounded-full bg-[#2f6a78]" />
+                  <span className="h-3 w-3 rounded-full bg-[#f3c8aa]" />
                 </div>
-                <div className="rounded-[22px] bg-white/82 p-4 shadow-[0_20px_40px_-26px_rgba(15,23,42,0.45)] backdrop-blur">
-                  <div className="flex items-end gap-2">
-                    <div className="h-10 w-4 rounded-full bg-[#2f6a78]" />
-                    <div className="h-14 w-4 rounded-full bg-[#f97a4b]" />
-                    <div className="h-8 w-4 rounded-full bg-[#f3c8aa]" />
-                    <div className="h-12 w-4 rounded-full bg-[#84c5c6]" />
-                  </div>
+                <div className="mt-4 space-y-2">
+                  <div className="h-2 rounded-full bg-white/90" />
+                  <div className="h-2 w-4/5 rounded-full bg-white/85" />
+                  <div className="h-2 w-3/5 rounded-full bg-[#2f6a78]" />
+                </div>
+                <div className="mt-5 flex items-end gap-2">
+                  <div className="h-10 w-4 rounded-full bg-[#2f6a78]" />
+                  <div className="h-14 w-4 rounded-full bg-[#f97a4b]" />
+                  <div className="h-8 w-4 rounded-full bg-[#f3c8aa]" />
+                  <div className="h-12 w-4 rounded-full bg-[#84c5c6]" />
                 </div>
               </div>
 
-              <div className="relative flex h-full items-end">
-                <div className="w-full max-w-[410px] rounded-[30px] border border-black/5 bg-[rgba(255,255,255,0.22)] p-6 shadow-[0_20px_50px_-26px_rgba(15,23,42,0.55)] backdrop-blur-md">
+              <div className="relative flex h-full items-center">
+                <div className="w-full max-w-[560px] rounded-[34px] border border-white/20 bg-[rgba(255,255,255,0.24)] p-7 shadow-[0_24px_56px_-26px_rgba(15,23,42,0.55)] backdrop-blur-md md:p-9">
                   <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ffd7c6]">
                     Developer Note
                   </p>
-                  <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">
+                  <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white md:text-5xl">
                     박준민의 스마트랩
                   </h1>
 
-                  <dl className="mt-6 grid gap-4 text-sm md:grid-cols-[92px_1fr] md:gap-x-6">
+                  <dl className="mt-8 grid gap-y-5 text-base md:grid-cols-[120px_1fr] md:gap-x-8">
                     <dt className="font-semibold text-[#fce8dd]">소속</dt>
-                    <dd className="font-medium text-white">대건고등학교 교사</dd>
+                    <dd className="font-semibold text-white">대건고등학교 교사</dd>
 
                     <dt className="font-semibold text-[#fce8dd]">개발 방향</dt>
-                    <dd className="font-medium text-white">교실에서 바로 쓰는 실용 도구</dd>
+                    <dd className="font-semibold text-white">교실에서 바로 쓰는 실용 도구</dd>
 
                     <dt className="font-semibold text-[#fce8dd]">연락처</dt>
-                    <dd className="flex items-center gap-2 break-all font-medium text-white">
-                      <Mail size={16} className="text-[#ffe7db]" />
+                    <dd className="flex items-center gap-3 break-all font-semibold text-white">
+                      <Mail size={18} className="text-[#ffe7db]" />
                       <span className="underline decoration-white/35 underline-offset-4">
                         junmini84@daegun.hs.kr
                       </span>
