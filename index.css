@@ -1,6 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    color: #0f172a;
+    background-color: #f8fafc;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
 
 @layer utilities {
   .no-print {
@@ -20,64 +40,55 @@
   @page {
     size: A4;
     margin: 5mm;
-    /* Reduced margin */
   }
 
   body {
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
     @apply bg-white text-black text-[9pt];
-    /* Reduced font size */
   }
 
   #root {
-    @apply w-full m-0 p-0;
+    @apply m-0 w-full p-0;
   }
 
-  /* Reset layout constraints for print */
   .min-h-screen {
     min-height: 0 !important;
     height: auto !important;
   }
 
-  .max-w-6xl {
+  .max-w-6xl,
+  .max-w-7xl {
     max-width: none !important;
   }
 
   .p-4,
-  .md\:p-8 {
+  .md\:p-8,
+  .md\:px-8,
+  .md\:py-8 {
     padding: 0 !important;
-  }
-
-  /* DaisyUI Table overrides for print */
-  .table {
-    @apply static;
   }
 
   table {
     @apply w-full border-collapse text-[9pt];
-    /* Reduced table font */
   }
 
   th {
-    @apply bg-gray-100 font-bold border border-gray-300 px-1 py-0.5 text-center h-6;
-    /* Compact padding/height */
+    @apply h-6 border border-gray-300 bg-gray-100 px-1 py-0.5 text-center font-bold;
   }
 
   td {
-    @apply border border-gray-300 px-1 py-0.5 text-center h-6 whitespace-nowrap;
-    /* Compact padding/height */
+    @apply h-6 whitespace-nowrap border border-gray-300 px-1 py-0.5 text-center;
   }
 
-  /* Hide interactive elements */
   button,
   input,
   select,
-  .toggle {
+  textarea,
+  iframe {
     display: none !important;
   }
 
-  /* Ensure backgrounds render */
   * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;

@@ -1,9 +1,8 @@
-import { Student, Zone, Settings, AppState } from '../types';
+import { AppState, Settings, Student, Zone } from '../types';
 
-// Utility: Shuffle Array (Fisher-Yates)
 function shuffleArray<T>(array: T[]): T[] {
   const newArray = [...array];
-  for (let i = newArray.length - 1; i > 0; i--) {
+  for (let i = newArray.length - 1; i > 0; i -= 1) {
     const j = Math.floor(Math.random() * (i + 1));
     [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
   }
@@ -25,52 +24,52 @@ export const useAssignmentLogic = ({
   settings,
   setStudents,
   setAppState,
-  triggerResultEffects
+  triggerResultEffects,
 }: UseAssignmentLogicProps) => {
-
-  const calculateScore = (assignment: Student[]): number => {
-    let overlapCount = 0;
-    assignment.forEach(s => {
-      if (s.previousZoneId && s.assignedZoneId === s.previousZoneId) {
-        overlapCount++;
+  const calculateScore = (assignment: Student[]) =>
+    assignment.reduce((score, student) => {
+      if (student.previousZoneId && student.assignedZoneId === student.previousZoneId) {
+        return score + 1;
       }
-    });
-    return overlapCount;
-  };
+      return score;
+    }, 0);
 
   const handleAssign = () => {
-    const activeStudents = students.filter(s => !s.isExcluded);
-    const totalCapacity = zones.reduce((sum, z) => sum + z.allocation, 0);
+    const activeStudents = students.filter((student) => !student.isExcluded);
+    const totalCapacity = zones.reduce((sum, zone) => sum + zone.allocation, 0);
 
     if (activeStudents.length !== totalCapacity) {
-      alert(`배정 대상 학생 수(${activeStudents.length}명)와 구역 수용 인원(${totalCapacity}명)이 일치하지 않습니다.\n(제외된 학생은 배정 인원에서 빠집니다)`);
+      alert(
+        `배정 대상 학생 수(${activeStudents.length}명)와 구역 수용 인원(${totalCapacity}명)이 일치하지 않습니다.\n제외된 학생은 배정 인원에서 빠집니다.`,
+      );
       return;
     }
 
     let bestAssignment: Student[] = [];
-    let bestScore = Infinity;
-
+    let bestScore = Number.POSITIVE_INFINITY;
     const iterations = settings.avoidPrevious ? 100 : 1;
 
-    for (let k = 0; k < iterations; k++) {
-      const shuffledActive: Student[] = shuffleArray(activeStudents);
-      let assignedIndex = 0;
+    for (let attempt = 0; attempt < iterations; attempt += 1) {
+      const shuffledActive = shuffleArray(activeStudents);
       const currentRunStudents = [...students];
+      let assignedIndex = 0;
 
-      zones.forEach(zone => {
-        for (let i = 0; i < zone.allocation; i++) {
-          if (assignedIndex < shuffledActive.length) {
-            const assignedStudent = shuffledActive[assignedIndex];
-            const studentIndex = currentRunStudents.findIndex(s => s.id === assignedStudent.id);
-            if (studentIndex !== -1) {
-              currentRunStudents[studentIndex] = {
-                ...currentRunStudents[studentIndex],
-                assignedZoneId: zone.id,
-                assignedZoneName: zone.name
-              };
-            }
-            assignedIndex++;
+      zones.forEach((zone) => {
+        for (let i = 0; i < zone.allocation; i += 1) {
+          if (assignedIndex >= shuffledActive.length) return;
+
+          const assignedStudent = shuffledActive[assignedIndex];
+          const studentIndex = currentRunStudents.findIndex((student) => student.id === assignedStudent.id);
+
+          if (studentIndex !== -1) {
+            currentRunStudents[studentIndex] = {
+              ...currentRunStudents[studentIndex],
+              assignedZoneId: zone.id,
+              assignedZoneName: zone.name,
+            };
           }
+
+          assignedIndex += 1;
         }
       });
 
@@ -79,6 +78,7 @@ export const useAssignmentLogic = ({
         bestScore = score;
         bestAssignment = currentRunStudents;
       }
+
       if (score === 0) break;
     }
 
@@ -86,13 +86,12 @@ export const useAssignmentLogic = ({
 
     if (settings.enableCountdown) {
       setAppState('counting');
-    } else {
-      triggerResultEffects(settings.enableFanfare);
-      setAppState('result');
+      return;
     }
+
+    triggerResultEffects(settings.enableFanfare);
+    setAppState('result');
   };
 
-  return {
-    handleAssign
-  };
+  return { handleAssign };
 };

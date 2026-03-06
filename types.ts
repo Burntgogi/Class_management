@@ -1,3 +1,5 @@
+import { LucideIcon } from 'lucide-react';
+
 export interface Student {
   id: string;
   number: number;
@@ -20,6 +22,19 @@ export interface Settings {
   enableHiddenZones: boolean;
   enableFanfare: boolean;
   avoidPrevious: boolean; // New setting
+}
+
+export interface DashboardCardItem {
+  title: string;
+  description: string;
+  highlight: string;
+  href: string;
+  kicker: string;
+  ctaLabel: string;
+  accent: 'blue' | 'green' | 'amber' | 'slate';
+  icon: LucideIcon;
+  badge?: string;
+  external?: boolean;
 }
 
 export type AppState = 'input' | 'counting' | 'waiting_reveal' | 'result';
