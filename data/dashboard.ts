@@ -12,10 +12,10 @@ export const classManagementTools: DashboardCardItem[] = [
     badge: '운영 중',
   },
   {
-    title: 'RBF Word Search',
-    description: '수업 도입, 영어 활동, 자투리 시간에 바로 쓸 수 있는 단어 찾기 도구를 내부 페이지에서 실행합니다.',
+    title: '생활기록부 금칙어 찾기',
+    description: '생활기록부 기록 속 금칙어를 찾아줍니다.',
     href: '/wordsearch',
-    ctaLabel: '활동 열기',
+    ctaLabel: '도구 열기',
     accent: 'green',
     icon: WandSparkles,
     badge: '신규',

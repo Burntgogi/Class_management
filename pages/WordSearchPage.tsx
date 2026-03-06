@@ -3,9 +3,9 @@ import { ArrowLeft, ExternalLink, Grid2X2, Home, MonitorPlay, Search } from 'luc
 import { Link } from 'react-router-dom';
 
 const features = [
-  '단어 찾기 활동을 빠르게 띄워 수업 도입이나 전환 활동에 활용',
-  '학생 참여형 화면으로 교실 TV, 전자칠판, 노트북에서 바로 실행',
-  '학급 운영 도구와 같은 메뉴 안에서 접근해 준비 동선을 단축',
+  '생활기록부 문장을 붙여 넣고 금칙어를 빠르게 점검',
+  '교사가 기록 검토 전에 바로 확인할 수 있는 실무용 흐름',
+  '학급 경영 도구 메뉴 안에서 바로 열어 준비 동선을 단축',
 ];
 
 export const WordSearchPage: React.FC = () => {
@@ -37,14 +37,14 @@ export const WordSearchPage: React.FC = () => {
             <div>
               <div className="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700">
                 <Search size={14} />
-                Class Activity
+                Record Check
               </div>
               <h1 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-slate-900 md:text-5xl">
-                RBF Word Search를 학급 경영 화면 안에서 바로 실행합니다.
+                생활기록부 금칙어 찾기를 학급 경영 화면 안에서 바로 실행합니다.
               </h1>
               <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600 md:text-base">
-                짧은 집중 활동, 영어 수업 도입, 자투리 시간용 교실 활동에 맞춘 단어 찾기 도구입니다.
-                기존 학급 운영 도구와 같은 흐름으로 배치해 수업 준비 동선을 줄였습니다.
+                생활기록부 기록 속 금칙어를 빠르게 찾을 수 있도록 연결한 실무용 점검 도구입니다.
+                기존 학급 운영 도구와 같은 흐름으로 배치해 검토 동선을 줄였습니다.
               </p>
             </div>
 
@@ -79,7 +79,7 @@ export const WordSearchPage: React.FC = () => {
           </div>
           <div className="bg-slate-950/95 p-2 md:p-3">
             <iframe
-              title="RBF Word Search"
+              title="생활기록부 금칙어 찾기"
               src="https://rbfwordsearch.netlify.app/"
               className="h-[72vh] min-h-[640px] w-full rounded-[24px] bg-white"
             />
