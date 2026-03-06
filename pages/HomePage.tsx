@@ -52,29 +52,36 @@ export const HomePage: React.FC = () => {
               <div className="absolute left-6 top-20 h-24 w-40 rounded-[50%] bg-[#efb091]/55 blur-sm" />
               <div className="absolute left-24 top-16 h-28 w-56 bg-[#d79d80]/40 [clip-path:polygon(0_100%,28%_38%,44%_62%,61%_18%,79%_56%,100%_100%)]" />
               <div className="absolute left-56 top-[4.5rem] h-24 w-52 bg-[#e2aa8e]/45 [clip-path:polygon(0_100%,25%_48%,40%_72%,58%_16%,78%_62%,100%_100%)]" />
-              <div className="absolute right-10 top-16 h-40 w-44 rounded-[44px] bg-[#f38a5d]/22 blur-sm" />
-              <div className="absolute right-12 top-14 h-52 w-32 rounded-b-[34px] rounded-t-[90px] bg-[#ef8051]" />
-              <div className="absolute right-20 top-20 h-24 w-[4.5rem] rounded-full bg-[#325f6a]" />
-              <div className="absolute right-28 top-32 h-40 w-10 rounded-full bg-[#325f6a]" />
-              <div className="absolute right-0 top-28 h-44 w-36 bg-[#e96d44] opacity-90 [clip-path:ellipse(56%_46%_at_72%_52%)]" />
+              <div className="absolute right-2 top-24 h-44 w-36 bg-[#e96d44]/88 [clip-path:ellipse(58%_46%_at_72%_52%)] md:hidden" />
+              <div className="absolute right-10 top-14 h-52 w-32 rounded-b-[34px] rounded-t-[90px] bg-[#ef8051] md:hidden" />
+              <div className="absolute right-18 top-18 h-24 w-[4.5rem] rounded-full bg-[#325f6a] md:hidden" />
+              <div className="absolute right-24 top-32 h-40 w-10 rounded-full bg-[#325f6a] md:hidden" />
               <div className="absolute bottom-0 left-0 right-0 h-28 bg-[linear-gradient(180deg,rgba(34,74,84,0)_0%,rgba(21,49,58,0.92)_100%)]" />
 
-              <div className="absolute right-8 top-8 hidden w-[168px] rounded-[26px] bg-white/78 p-4 shadow-[0_20px_40px_-26px_rgba(15,23,42,0.45)] backdrop-blur md:block">
-                <div className="flex items-center gap-2">
-                  <span className="h-3 w-3 rounded-full bg-[#f97a4b]" />
-                  <span className="h-3 w-3 rounded-full bg-[#2f6a78]" />
-                  <span className="h-3 w-3 rounded-full bg-[#f3c8aa]" />
-                </div>
-                <div className="mt-4 space-y-2">
-                  <div className="h-2 rounded-full bg-white/90" />
-                  <div className="h-2 w-4/5 rounded-full bg-white/85" />
-                  <div className="h-2 w-3/5 rounded-full bg-[#2f6a78]" />
-                </div>
-                <div className="mt-5 flex items-end gap-2">
-                  <div className="h-10 w-4 rounded-full bg-[#2f6a78]" />
-                  <div className="h-14 w-4 rounded-full bg-[#f97a4b]" />
-                  <div className="h-8 w-4 rounded-full bg-[#f3c8aa]" />
-                  <div className="h-12 w-4 rounded-full bg-[#84c5c6]" />
+              <div className="pointer-events-none absolute right-8 top-1/2 hidden h-[220px] w-[220px] -translate-y-1/2 md:block lg:right-10 lg:h-[250px] lg:w-[250px]">
+                <div className="absolute inset-0 rounded-full bg-[#f07e4f]/18 blur-2xl" />
+                <div className="absolute right-0 top-[28%] h-[54%] w-[56%] rounded-full bg-[#e96d44]/90" />
+                <div className="absolute right-[18%] top-[10%] h-[62%] w-[34%] rounded-b-[38px] rounded-t-[88px] bg-[#ef8051]" />
+                <div className="absolute right-[34%] top-[16%] h-[22%] w-[24%] rounded-full bg-[#2f6171]" />
+                <div className="absolute right-[28%] top-[34%] h-[56%] w-[12%] rounded-full bg-[#2f6171]" />
+
+                <div className="absolute left-[6%] top-[2%] w-[62%] rounded-[24px] bg-white/82 p-4 shadow-[0_20px_40px_-26px_rgba(15,23,42,0.45)] backdrop-blur">
+                  <div className="flex items-center gap-2">
+                    <span className="h-3 w-3 rounded-full bg-[#f97a4b]" />
+                    <span className="h-3 w-3 rounded-full bg-[#2f6a78]" />
+                    <span className="h-3 w-3 rounded-full bg-[#f3c8aa]" />
+                  </div>
+                  <div className="mt-4 space-y-2">
+                    <div className="h-2 rounded-full bg-white/90" />
+                    <div className="h-2 w-4/5 rounded-full bg-white/85" />
+                    <div className="h-2 w-3/5 rounded-full bg-[#2f6a78]" />
+                  </div>
+                  <div className="mt-5 flex items-end gap-2">
+                    <div className="h-10 w-4 rounded-full bg-[#2f6a78]" />
+                    <div className="h-14 w-4 rounded-full bg-[#f97a4b]" />
+                    <div className="h-8 w-4 rounded-full bg-[#f3c8aa]" />
+                    <div className="h-12 w-4 rounded-full bg-[#84c5c6]" />
+                  </div>
                 </div>
               </div>
 
