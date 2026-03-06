@@ -43,7 +43,7 @@ export const ResultsSection: React.FC<Props> = ({
   };
 
   return (
-    <div className="mt-8 w-full rounded-[32px] bg-white p-4 shadow-[0_28px_70px_-45px_rgba(15,23,42,0.45)] print:bg-transparent print:p-0 print:shadow-none md:p-8">
+    <div className="mt-8 w-full rounded-[32px] bg-white p-4 shadow-[0_28px_70px_-45px_rgba(15,23,42,0.45)] print:bg-white print:p-0 print:shadow-none md:p-8">
       <div className="mb-8 flex flex-wrap justify-center gap-4 no-print">
         <button
           type="button"
